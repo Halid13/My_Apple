@@ -22,5 +22,4 @@ jobs:
      - name: Run a multi-line script
        run: |
          (find . -type f \( -name "*.o" -o -name "*~" -o -name "#*" -o -name "*.a" -o -name "*.so" -o -name "*.gcda" -o -name "*.gcov" -o -name "tmp" \))
-         echo Add other actions to build,
-         echo test, and deploy your project.
+         echo "::error file=${FILE#./}, tile=Unwanted file detected::${FILE#./}"
