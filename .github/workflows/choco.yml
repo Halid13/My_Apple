@@ -28,6 +28,8 @@ jobs:
        image: epitechcontent/epitest-docker
      steps:
        - uses: actions/checkout@v3
-       - run: make ./
+       - run: 
+            make ./
        - timeout-minutes: 2
-       - run : make clean ./
+       - run:  
+            make clean ./
