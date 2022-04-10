@@ -18,14 +18,6 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         - run: |
-            mh=$(find . -type f \( -name "*.o" -o -name "*~" -o -name "#*" -o -name "*.a" -o -name "*.so" -o -name "*.gcda" -o -name "*.gcov" -o -name "tmp" \))
-            for FILES in $mh; do
+            (find . -type f \( -name "*.o" -o -name "*~" -o -name "#*" -o -name "*.a" -o -name "*.so" -o -name "*.gcda" -o -name "*.gcov" -o -name "tmp" \))
             echo "::error file=${FILE#./}, tile=Unwanted file detected::${FILE#./}"
-            done
-            if [[ -n $mh ]]
-            then
-              exit 1
-            else
-              echo "No unwanted files detected"
-              exit 0
-            fi
+ 
