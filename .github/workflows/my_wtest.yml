@@ -1,0 +1,17 @@
+name: Mon Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout du code
+      uses: actions/checkout@v2
+
+    - name: Exécuter une action
+      run: echo "C'est l'action !"
